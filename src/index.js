@@ -1,3 +1,3 @@
-import initSite from "./website.js";
+import {initSite} from "./website.js";
 
 initSite();

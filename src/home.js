@@ -1,3 +1,6 @@
+import renderMenu from "./menu"
+import { setActive } from "./website"
+
 const createHome = () => {
     const mainCont = document.createElement('div')
     mainCont.classList.add('main-container')
@@ -29,6 +32,7 @@ const createHome = () => {
         const orderBtn1 = document.createElement('button');
         const orderBtn2 = document.createElement('button');
         orderBtn1.classList.add('order-button');
+        orderBtn1.id = 'home-menu-button'
         orderBtn2.classList.add('order-button');
         orderBtn1.textContent = 'Menu';
         orderBtn2.textContent = 'Order Now';
@@ -37,7 +41,12 @@ const createHome = () => {
         order2.appendChild(orderBtn2);
         btnCont.appendChild(order1);
         btnCont.appendChild(order2);
- 
+        const menuBtn = document.getElementById('menu')
+
+        orderBtn1.addEventListener('click', (e) => {
+            setActive(menuBtn);
+            renderMenu();
+        })
     tagCont.appendChild(tagline);
     tagCont.appendChild(btnCont);
     mainCont.appendChild(tagCont);   

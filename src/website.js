@@ -43,6 +43,7 @@ const createNav = () => {
         setActive(menuBtn);
         renderMenu();
     })
+
     const contactBtn = document.createElement('div');
     contactBtn.classList.add('nav-button');
     contactBtn.id = 'contact';
@@ -108,4 +109,4 @@ function initSite(){
     renderHome(); 
 }
 
-export default initSite
+export  {   initSite, setActive };

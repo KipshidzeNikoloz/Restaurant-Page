@@ -103,10 +103,10 @@ const createMenuItem = (name, price, description) => {
 }
 
 
-function loadMenu() {
+function renderMenu() {
     const main = document.getElementById('main');
     main.textContent = '';
     main.appendChild(createMenu());
 }
 
-export default loadMenu;
+export default renderMenu;
