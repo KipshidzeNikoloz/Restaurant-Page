@@ -1,21 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 
-html, body {
-    background-image: url(images/background.jpeg);
-    background-size: 100%;
+html {
+    background-color: #dbc9b9;
     height: 100%;
     margin: 0;
 }
 
-#content{
-    background-color: #00000082;
+body {
+    margin: 0;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
+#content {
+    height: 100%;
 }
 
 .page-header{
-    background-color: rgba(0, 0, 0, 0.534);
+    background-color: rgba(0, 0, 0, 0.733);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,13 +27,34 @@ html, body {
     border-bottom: #d44a31 solid;
 }
 
+.footer{
+    background-color: rgba(0, 0, 0, 0.671);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: #d44a31 solid;
+}
 
-.page-header h1{
+
+.page-header h1 {
     color: #d44a31;
     font-family: 'Megrim', cursive;
     font-size: 5.5rem;
     margin: 0 0 0 2rem;
     letter-spacing: 2rem;
+}
+
+.textCont {
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.textCont p {
+    color: #d44a31;
+    margin: 0 0 0 2rem;
+    letter-spacing: 0.2rem;
 }
 
 .navbar {
@@ -59,7 +84,11 @@ html, body {
 }
 
 .main-container{
-    margin-top: 6rem;
+    height: 50vw;
+    background-image: url(images/background.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .tagline-container {
@@ -176,4 +205,62 @@ html, body {
     color: white;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
+}
+
+.menu-head{
+    display: flex;
+    justify-content: center;
+    font-size: 6rem;
+    color: #d44a31;
+    margin: 0;
+}
+
+.menu-head p{
+    border-bottom: 2px #00000094 dashed;
+    margin: 0;
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
+
+    margin: 6rem;
+
+    background-color: #00000094;
+    border: 2px #d44a31 solid;
+    border-radius: 12px;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 2rem;
+}
+
+.item-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-price, .item-name, .item-description{
+    color: white;
+}
+
+.item-name{
+    border-bottom: 2px #d44a31 dashed;
+}
+
+#adjariankhachapuri{
+    transform: scaleY(1.15) translateY(6%);
+}
+
+.fa-github {
+    color: black;
+}
+
+.fa-github:hover{
+    color: grey;
 }
