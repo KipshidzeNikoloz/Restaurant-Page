@@ -45,10 +45,10 @@ const createHome = () => {
     return mainCont;
 }
 
-function loadHome() {
-    const main = document.getElementById('main');
+function renderHome() {
+    const main = document.querySelector('#main')
     main.textContent = '';
     main.appendChild(createHome());
 }
 
-export default loadHome;
+export default renderHome;

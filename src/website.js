@@ -1,11 +1,10 @@
-import loadHome from "./home";
-import loadContact from "./contact";
+import renderHome from "./home";
+import renderContact from "./contact";
+import renderMenu from "./menu";
 
 const createMain = () => {
     const main = document.createElement('main');  
     main.id = 'main'  
-    // main.appendChild(createHeader())
-
     return main;
 }
 
@@ -32,7 +31,7 @@ const createNav = () => {
     homeBtn.addEventListener('click', (e) => {
         if (e.target.classList.contains("active")) return;
         setActive(homeBtn);
-        loadHome();
+        renderHome();
     });
 
     const menuBtn = document.createElement('div');
@@ -40,7 +39,9 @@ const createNav = () => {
     menuBtn.id = 'menu';
     menuBtn.textContent = 'Menu';
     menuBtn.addEventListener('click', (e) => {
-        console.log(e)
+        if (e.target.classList.contains("active")) return;
+        setActive(menuBtn);
+        renderMenu();
     })
     const contactBtn = document.createElement('div');
     contactBtn.classList.add('nav-button');
@@ -49,7 +50,7 @@ const createNav = () => {
     contactBtn.addEventListener('click', (e) => {
         if (e.target.classList.contains("active")) return;
         setActive(contactBtn);
-        loadContact();
+        renderContact();
     })
 
     navbar.appendChild(homeBtn)
@@ -58,6 +59,29 @@ const createNav = () => {
 
     return navbar;
 
+}
+
+const createFooter = () => {
+    const footer = document.createElement('div')
+        const textCont = document.createElement('div')
+            const name = document.createElement('p')
+            name.textContent = 'Nikoloz Kipshidze'
+            const gitHubLink = document.createElement('a')
+            gitHubLink.href = "https://github.com/KipshidzeNikoloz";
+            const gitIcon = document.createElement('i')
+      
+    footer.classList.add('footer')            
+    textCont.classList.add('textCont')     
+    gitIcon.classList.add('fa')
+    gitIcon.classList.add('fa-github')
+    gitIcon.style= 'font-size:24px';
+
+    gitHubLink.appendChild(gitIcon)
+    textCont.appendChild(name)
+    textCont.appendChild(gitHubLink)
+    footer.appendChild(textCont)
+    
+    return footer;
 }
 
 const setActive = (btn) => {
@@ -74,12 +98,14 @@ const setActive = (btn) => {
 
 
 function initSite(){
-    const content = document.getElementById('content');
+    const content = document.querySelector('#content');
+
     content.appendChild(createHeader())
     content.appendChild(createMain())
+    content.appendChild(createFooter())
 
     setActive(document.querySelector('.nav-button'));
-    loadHome();
+    renderHome(); 
 }
 
-export default initSite;
+export default initSite
